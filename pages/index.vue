@@ -1,5 +1,6 @@
 <template>
   <main>
+    <HomeBanner/>
     <HomeCardTrio/>
     <div class="bellowFold">
       <HomeCardSlider/>

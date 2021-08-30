@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <HomeBanner/>
+    <div class="mainLayout">
         <SharedHeader/>
         <Nuxt />
         <SharedFooter/>
