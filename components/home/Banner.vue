@@ -1,20 +1,106 @@
 <template>
-    
+    <section class="bannerCon" role="banner">
+        <div class="bannerInner">
+            <div class="wrapper">
+                <!--  -->
+                <section class="textarea">
+                    <header>
+                        <h1>Manage, Monitor and Make Playlists, For All Of Your Spotify Accounts.</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis aliquam neque. Pellentesque tellus justo, laoreet vestibulum neque quis, dignissim interdum nunc. Mauris massa ligula.</p>
+                    </header>
+                    <footer class="btnRow">
+                        <nuxt-link to="#" aria-label="Sign up to PlaylistTools.io">sign up</nuxt-link>
+                        <nuxt-link to="#" aria-label="Sign in to PlaylistTools.io">sign in</nuxt-link>
+                    </footer>
+                </section>
+            </div>
+        </div> 
+    </section>  
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<style lang="scss" scoped>
+.bannerCon {
+    width: 100%;
+    padding: 1rem 1rem 0;
+    position: relative;
+    .bannerInner {
+        background: linear-gradient(270deg, rgba($color: #813ff5, $alpha: 0.9), rgba($color: #f49071, $alpha: 0.9));
+        background-size: 400% 400%;
+        animation: GradientAnimation 30s ease infinite;
+    
+        @keyframes GradientAnimation {
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
 
-export default Vue.extend({
-    data() {
-        return {
-            
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+        z-index: 10;
+        position: relative;
+        .wrapper {
+            @include wrapper;
+            padding-top: 9rem;
+            height: 100%;
+            .textarea {
+                text-align: center;
+                padding: $sectionSpacing 0;
+                @include forBreakpoint(mobile tablet){
+                    padding: $mobTabSpacing 0;
+                }
+                header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    h1 {
+                        color: $titleLight;
+                        font-size : clamp(3rem, 3vw, 5rem);
+                        margin-bottom: 2rem;
+                        max-width: 90rem;
+                    }
+                    p {
+                        font-size: 1.8rem;
+                        color: $bodyLight;
+                        max-width: 80rem;
+                    }
+                }
 
+                .btnRow {
+                    display: flex;
+                    margin-top: 4rem;
+                    justify-content: center;
+                    gap: 1rem 2rem;
+                    @include forBreakpoint(mobile) {
+                        flex-wrap: wrap;
+                        a {
+                            width: 90%;
+                        }
+                    }
+                    a {
+                        @include defaultBtnStyle;
+                        display: block;
+                        border: 0.2rem solid #FFF;
+                        padding: 1rem 8rem;
+                        &:first-child {
+                            background-color: #fff;
+                            color: $titleText;
+                            &:hover {
+                                background-color: darken(#fff, 5%);
+                                border: 0.2rem solid darken(#fff, 5%);
+                            }
+                        }
+                        &:hover {
+                            background-color: #fff;
+                            color: $titleText;
+                        }
+                        &:focus {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
         }
     }
-})
-</script>
-
-<style lang="scss" scoped>
-
+}
 </style>

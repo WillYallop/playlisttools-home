@@ -1,5 +1,13 @@
 <template>
-
+  <main>
+    <HomeCardTrio/>
+    <div class="bellowFold">
+      <HomeCardSlider/>
+      <HomeLatestStories/>
+      <HomePricingTables/>
+      <CtaDownload/>
+    </div>
+  </main>
 </template>
 
 <script lang="ts">
@@ -10,3 +18,11 @@ export default Vue.extend({
 
 })
 </script>
+
+
+<style lang="scss" scoped>
+.bellowFold {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 1000px; 
+}
+</style>

@@ -1,0 +1,146 @@
+<template>
+    <section class="sectionCon downloadCta">
+
+        <section class="ctaCon">
+            <section class="ctaCol">
+                <header>
+                    <h3>Get PlaylistTools.io On Your Other Devices</h3>
+                </header>
+                <p>Download our Windows and Mac app now for PC, or find us on the Google play store on android. So you can manage your playlists where ever you are.</p>
+                <footer>
+                    <nuxt-link to="#">Mac/Windows</nuxt-link>
+                    <nuxt-link to="#">Android</nuxt-link>
+                </footer>
+            </section>
+            <div class="ctaImCol">
+                <div class="imgCon">
+                    <!-- img -->
+                    <img src="@/assets/images/ctas/downloadCtaPhone1.svg" loading="lazy" decoding="async"  alt="PlaylistTools.io application">
+                    <img src="@/assets/images/ctas/downloadCtaPhone1.svg"  loading="lazy" decoding="async" alt="PlaylistTools.io application">
+                </div>
+            </div>
+        </section>
+
+    </section>
+</template>
+
+<style lang="scss" scoped>
+.downloadCta {
+
+    .ctaCon {
+        @include gradientAnimation;
+        width: 100%;
+        padding: 4rem;
+        border-radius: 2rem;   
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .ctaCol {
+            width: 50%;
+            padding: 4rem 0;
+            @include forBreakpoint(mobile){
+                width: 100%;
+            }
+            header {
+                margin-bottom: 1rem;
+                h3 {
+                    @include h3;
+                    font-size : clamp(3rem, 3vw, 4rem);
+                    max-width: 40rem;
+                    color: $titleLight;
+                }
+            }
+            p {
+                font-size: 1.6rem;
+                color: $bodyLight;
+                max-width: 45rem;
+            }
+            footer {
+                margin-top: 3rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem 2rem;
+                a {
+                    @include defaultBtnStyle;
+                    display: block;
+                    border: 0.2rem solid #fff;
+                    &:first-child {
+                        background-color: #fff;
+                        color: $titleText;
+                        &:hover {
+                            background-color: darken(#fff, 5%);
+                            border: 0.2rem solid darken(#fff, 5%);
+                        }
+                    }
+                    &:hover {
+                        background-color: #fff;
+                        color: $titleText;
+                    }
+                    &:focus {
+                        transform: scale(1.1);
+                    }
+                    @include forBreakpoint(mobile tablet){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .ctaImCol {
+            align-self: stretch;
+            width: 50%;
+            position: relative;
+            @include forBreakpoint(mobile){
+                width: 100%;
+            }
+            .imgCon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                gap: 0 2rem;
+                @include forBreakpoint(mobile tablet){
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                }
+                @include forBreakpoint(mobile){
+                    flex-wrap: nowrap;
+                    align-items: flex-start;
+                    margin-top: 2rem;
+                }
+                img {
+                    height: calc(100% + 8rem);
+                    &:first-child {
+                        margin-top: 2rem;
+                    }
+                    @include forBreakpoint(mobile tablet){
+                        height: 40rem;
+                        object-fit: contain;
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                        &:last-child {
+                            display: none;
+                        }
+                    }
+                    @include forBreakpoint(mobile){
+                        width: calc(50% - 1rem);
+                        height: auto;
+                        &:first-child {
+                            margin-top: 2rem;
+                        }
+                        &:last-child {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+</style>

@@ -2,9 +2,7 @@
     <div>
         <HomeBanner/>
         <SharedHeader/>
-        <main>
-            <Nuxt />
-        </main>
+        <Nuxt />
         <SharedFooter/>
     </div>
 </template>
